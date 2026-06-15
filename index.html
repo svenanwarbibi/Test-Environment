@@ -3,12 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IC3 Project</title>
+  <title>IC-3 Market Analysis Plan</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>IC3 Project</h1>
-  <p>Welcome to the IC3 web app.</p>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title">
+        <span class="logo">IC-3</span>
+        <div>
+          <h1>Market Analysis Plan</h1>
+          <p class="header-subtitle">Potentials and Opportunities for Innovation Services</p>
+        </div>
+      </div>
+      <div class="meta-tags">
+        <span class="tag">DACH · EMEA · US</span>
+        <span class="tag">FMCG/CPG · Packaging</span>
+        <span class="tag">6–12 months</span>
+        <span class="tag">2.5 FTEs</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#module-1">1. Landscape Analysis</a></li>
+        <li><a href="#module-2">2. Signal Analysis</a></li>
+        <li><a href="#module-3">3. Pull / Push Factors</a></li>
+        <li><a href="#module-4">4. Market Shifts</a></li>
+        <li><a href="#module-5">5. Customer Expectations</a></li>
+        <li><a href="#module-6">6. Market Fit</a></li>
+        <li><a href="#execution">Execution Sequence</a></li>
+        <li><a href="#automation">Automation Roadmap</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#caveats">Assumptions &amp; Caveats</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="section">
+        <h2>Overview</h2>
+        <div class="meta-grid">
+          <div class="meta-item"><span class="meta-label">Audience</span><span>IC-3 Strategy, Business Development, Sales</span></div>
+          <div class="meta-item"><span class="meta-label">Scope</span><span>DACH, EMEA, US – near-term (6–12 months)</span></div>
+          <div class="meta-item"><span class="meta-label">Verticals</span><span>FMCG/CPG, Packaging Manufacturers + adjacent sectors</span></div>
+          <div class="meta-item"><span class="meta-label">Constraints</span><span>Zero budget, desk research, 2.5 FTEs, publicly available data</span></div>
+          <div class="meta-item meta-full"><span class="meta-label">Purpose</span><span>Immediate manual execution; structured for later translation into an automated agentic market-intelligence process</span></div>
+        </div>
+        <div class="callout">
+          <p>Each of the six modules follows the same structure: objective, key questions, data sources, concrete steps, output format, and an automation-readiness tag.</p>
+          <div class="legend">
+            <span class="badge auto">🤖 Fully automatable</span>
+            <span class="badge hybrid">🤖/👤 Automatable with human validation</span>
+            <span class="badge human">👤 Requires human judgement</span>
+          </div>
+          <p class="timeline-note">Time estimates assume one person working full-time. The entire plan delivers a usable first pass in approximately <strong>15–20 working days</strong>.</p>
+        </div>
+      </section>
+
+      <!-- MODULE 1 -->
+      <section id="module-1" class="section">
+        <div class="module-header">
+          <div class="module-number">01</div>
+          <div>
+            <h2>Landscape Analysis</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 5 working days for first pass</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Map the competitive and adjacent playing field for systematic innovation services in FMCG/CPG, packaging, and adjacent manufacturing sectors across DACH, EMEA, and the US.</p>
+
+        <h3>Key Questions</h3>
+        <ul>
+          <li>Who competes directly with IC-3's three pillars (Innovation Management, Projects, Trainings) in physical product innovation consulting?</li>
+          <li>Who is expanding from digital/service innovation into physical product innovation – and vice versa?</li>
+          <li>What is the market size for innovation consulting services in the target verticals, and what share is addressable for a 2.5-FTE boutique?</li>
+          <li>Where do large incumbents (MBB, Big 4, Accenture) leave white space that IC-3 can occupy?</li>
+        </ul>
+
+        <h3>Data Sources</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Source</th><th>What it provides</th><th>Access</th><th>Cadence</th></tr></thead>
+            <tbody>
+              <tr><td>Lünendonk Study</td><td>IT and management consulting market sizing, top-50 rankings, growth rates by segment</td><td>Free summary via luenendonk.de; full report c. €2,500 – use summary + press coverage</td><td>Annual, typically Q2</td></tr>
+              <tr><td>Source Global Research</td><td>Global consulting market sizing, innovation consulting segment data</td><td>Free newsletter + selected data via sourceglobalresearch.com</td><td>Quarterly</td></tr>
+              <tr><td>Gartner Market Share: IT Services</td><td>Worldwide vendor revenue by segment and industry</td><td>Press releases and Gartner newsroom (free); full data behind paywall</td><td>Annual</td></tr>
+              <tr><td>Statista</td><td>FMCG/CPG market size, packaging industry data, R&amp;D spend by sector</td><td>Partially free; institutional access preferred</td><td>Rolling</td></tr>
+              <tr><td>Bundesanzeiger (DE)</td><td>Annual reports of German competitors (GmbH filings: revenue, headcount, profit)</td><td>Free at bundesanzeiger.de</td><td>Annual, 6–12 month lag</td></tr>
+              <tr><td>Companies House (UK)</td><td>UK competitor filings</td><td>Free at find-and-update.company-information.service.gov.uk</td><td>Annual</td></tr>
+              <tr><td>LinkedIn Sales Navigator</td><td>Competitor headcount trends, hiring patterns, new service line launches</td><td>Free basic search; Navigator via existing subscription if available</td><td>Real-time</td></tr>
+              <tr><td>Competitor websites and blogs</td><td>Positioning, service catalogue, case studies, thought leadership topics</td><td>Free</td><td>Monthly scan</td></tr>
+              <tr><td>Clutch.co, G2</td><td>Innovation consulting firm ratings, client reviews, pricing signals</td><td>Free</td><td>Quarterly</td></tr>
+              <tr><td>ECSI</td><td>Consulting industry performance benchmarking</td><td>Free summary data</td><td>Biannual</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge auto">🤖</span> <strong>Build a competitor longlist.</strong> Start from the anonymised reference shortlist of 12 competitors. Expand using Clutch.co category pages. Target: 40–60 firms. <em>Parallelisable.</em></li>
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Classify competitors by archetype.</strong> Create a taxonomy: (a) systematic innovation methodology firms, (b) design-and-build consultancies, (c) large firms with innovation sub-units, (d) academic/methodology licensors.</li>
+          <li><span class="badge auto">🤖</span> <strong>Extract financial signals from Bundesanzeiger.</strong> Flag firms with revenue growth &gt;15% or headcount growth &gt;20% as "expanding competitors". <em>Parallelisable with step 1.</em></li>
+          <li><span class="badge human">👤</span> <strong>Map the white space.</strong> Overlay competitor positioning against IC-3's specific strengths: physical product innovation, systematic methodology (ADT), packaging/FMCG depth, proven KPI impact.</li>
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Size the addressable market.</strong> Use Lünendonk data for DACH (c. €45bn total consulting in 2023). Source Global Research estimates the global innovation and R&amp;D consulting market at c. $8–12bn.</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Competitor landscape map · White-space matrix · Market sizing estimate with confidence bands
+        </div>
+      </section>
+
+      <!-- MODULE 2 -->
+      <section id="module-2" class="section">
+        <div class="module-header">
+          <div class="module-number">02</div>
+          <div>
+            <h2>Signal Analysis</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 4 working days for setup + first scan; 2 hours/week ongoing</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Identify early and leading indicators of demand for IC-3 services – before they show up as RFPs.</p>
+
+        <h3>Key Questions</h3>
+        <ul>
+          <li>Which target companies are signalling innovation investment (capex announcements, new CDO/CIO hires, sustainability commitments)?</li>
+          <li>Which regulatory changes are creating mandatory innovation demand?</li>
+          <li>Where are M&amp;A events creating integration-driven innovation needs?</li>
+        </ul>
+
+        <h3>Signal Categories and Sources</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Signal type</th><th>What to look for</th><th>Source</th><th>Tag</th></tr></thead>
+            <tbody>
+              <tr><td>Leadership changes</td><td>New VP Innovation, CDO, Head of Packaging, Head of Sustainability appointed</td><td>LinkedIn (job change alerts), press releases</td><td><span class="badge auto">🤖</span></td></tr>
+              <tr><td>Capex / R&amp;D announcements</td><td>New plant investments, packaging line upgrades, R&amp;D budget increases</td><td>Annual reports (Bundesanzeiger, SEC EDGAR), earnings calls</td><td><span class="badge hybrid">🤖/👤</span></td></tr>
+              <tr><td>Sustainability commitments</td><td>Net-zero targets, circular economy pledges, CSRD compliance plans</td><td>CDP database (free), company sustainability reports, SBTi target tracker</td><td><span class="badge auto">🤖</span></td></tr>
+              <tr><td>M&amp;A activity</td><td>Mergers in FMCG/CPG/packaging creating post-merger innovation alignment needs</td><td>Reuters, Mergermarket (summary), Handelsblatt, FT</td><td><span class="badge hybrid">🤖/👤</span></td></tr>
+              <tr><td>Regulatory pressure</td><td>EU PPWR, CSRD, Ecodesign for Sustainable Products Regulation (ESPR)</td><td>EUR-Lex, European Commission press releases</td><td><span class="badge auto">🤖</span></td></tr>
+              <tr><td>Innovation programme failures</td><td>Restructurings, layoffs in innovation teams, cancelled product launches</td><td>News monitoring (Google Alerts), Glassdoor reviews</td><td><span class="badge hybrid">🤖/👤</span></td></tr>
+              <tr><td>Job postings</td><td>Companies hiring for "innovation manager", "packaging innovation", "design thinking" internally</td><td>LinkedIn, Indeed, Stepstone</td><td><span class="badge auto">🤖</span></td></tr>
+              <tr><td>Industry events</td><td>Speaking slots, panel topics at Interpack, FACHPACK, CFIA, PackExpo, Consumer Goods Forum</td><td>Event websites, programme PDFs</td><td><span class="badge auto">🤖</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge auto">🤖</span> <strong>Configure alert infrastructure.</strong> Set up Google Alerts for 30 target accounts plus key terms. Set up LinkedIn Sales Navigator alerts for leadership changes. <em>Week 1.</em></li>
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Build a regulatory timeline.</strong> Map EU PPWR (2025–2030 phased), CSRD (first reports due 2025), ESPR (framework 2025–2026) against target company compliance deadlines. <em>Parallelisable with step 1.</em></li>
+          <li><span class="badge auto">🤖</span> <strong>Scan target company annual reports for innovation language.</strong> For the top 20 accounts (ABInBev, Nestlé, Unilever, P&amp;G, Henkel, Beiersdorf, Mars, Mondelez, Danone, FrieslandCampina, Arla, SIG Group, Tetra Pak, Amcor, Berry Global, Sealed Air, Schwan-STABILO, Villeroy &amp; Boch, Colgate-Palmolive, Reckitt). <em>Parallelisable.</em></li>
+          <li><span class="badge human">👤</span> <strong>Score and prioritise signals.</strong> Apply urgency × fit matrix: time-sensitivity × IC-3 offering match. Rank the top 10 opportunities.</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Signal tracker (spreadsheet, updated weekly) · Regulatory timeline (Gantt chart) · Prioritised opportunity shortlist with estimated engagement size
+        </div>
+      </section>
+
+      <!-- MODULE 3 -->
+      <section id="module-3" class="section">
+        <div class="module-header">
+          <div class="module-number">03</div>
+          <div>
+            <h2>Drivers and Impact Factors</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 3 working days</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Identify and weight the forces driving demand towards (pull) and pushing companies away from (push) external innovation consulting.</p>
+
+        <h3>Pull Factors — Creating Demand for IC-3</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Driver</th><th>Evidence / quantification</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td>Regulatory pressure (PPWR, CSRD, ESPR)</td><td>PPWR alone affects an estimated 600,000+ companies placing packaging on the EU market; compliance deadlines 2025–2030</td><td>European Commission (2022), PPWR proposal COM/2022/677</td></tr>
+              <tr><td>Sustainability commitments outpacing internal capabilities</td><td>80% of top-50 FMCG companies have net-zero commitments by 2040–2050; fewer than 30% report having a concrete innovation pipeline to deliver them</td><td>CDP Global Supply Chain Report 2023; SBTi progress tracker</td></tr>
+              <tr><td>Innovation productivity gap</td><td>Large FMCG firms' R&amp;D-to-revenue ratio flat at 1.5–2.5% for a decade; new product success rates declined from c. 25% to c. 15%</td><td>Nielsen IQ "Breakthrough Innovation" reports (2018–2023)</td></tr>
+              <tr><td>Talent scarcity in innovation roles</td><td>Innovation manager roles in DACH take 30–50% longer to fill than general management roles</td><td>Hays Salary Guide 2024; LinkedIn Talent Insights</td></tr>
+              <tr><td>Cost pressure demanding structured innovation</td><td>CIO/CDO priority: process optimisation at 75%, cost reduction embedded in top-3 priorities across industries</td><td>Lünendonk Study 2023; Gartner CIO Survey 2023</td></tr>
+              <tr><td>Post-M&amp;A innovation harmonisation</td><td>FMCG M&amp;A activity remains elevated; 2023 global FMCG deal value c. $89bn</td><td>PwC Global M&amp;A Trends 2024</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Push Factors — Creating Headwinds</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Driver</th><th>Evidence / quantification</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td>In-house innovation capability build-up</td><td>66% of companies building internal cross-functional innovation teams; trend accelerating since 2020</td><td>Lünendonk 2023; anonymised competitor intelligence report (2023)</td></tr>
+              <tr><td>Budget tightening in discretionary consulting</td><td>Consulting market growth in DACH slowed from 8–10% (2021–2022) to 3–5% (2023–2024)</td><td>Lünendonk 2023; BDU market report 2024</td></tr>
+              <tr><td>AI substitution of parts of the innovation process</td><td>Generative AI tools increasingly used for early-stage ideation and concept screening, compressing value of generic "ideation workshop" offerings</td><td>McKinsey "The State of AI" survey 2024; BCG "AI and Innovation" report 2023</td></tr>
+              <tr><td>Price pressure from offshore/nearshore competitors</td><td>Competitors from lower-cost-base countries offering design-and-build at 30–50% lower day rates</td><td>Anonymised competitor intelligence report (2023)</td></tr>
+              <tr><td>"Design Thinking fatigue"</td><td>78% of large enterprises claim to use some form of design thinking internally; no longer a differentiator</td><td>Anonymised competitor intelligence report (2023); McKinsey Design Index</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Validate and quantify each driver.</strong> For each factor above, verify the cited data point is current. Where data is from 2023, search for 2024/2025 updates.</li>
+          <li><span class="badge human">👤</span> <strong>Weight relative impact on IC-3's target segments.</strong> Regulatory pressure (PPWR) is disproportionately strong for packaging. AI substitution risk is lower for physical product innovation. Build a weighted scorecard.</li>
+          <li><span class="badge human">👤</span> <strong>Identify net-effect by vertical.</strong> For each target vertical (FMCG, CPG, packaging manufacturers, adjacent: automotive, chemicals, sanitary), calculate whether pull or push forces dominate.</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Pull/push driver matrix with weightings · Net-effect assessment by vertical · Risk register for push factors
+        </div>
+      </section>
+
+      <!-- MODULE 4 -->
+      <section id="module-4" class="section">
+        <div class="module-header">
+          <div class="module-number">04</div>
+          <div>
+            <h2>Market Shifts</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 3 working days</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Map structural changes in how innovation services are bought, delivered, and valued in IC-3's target markets.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Shift</th><th>Description</th><th>Implication for IC-3</th><th>Evidence source</th></tr></thead>
+            <tbody>
+              <tr><td>From project-based to subscription/retainer</td><td>Companies increasingly prefer ongoing advisory relationships over one-off projects</td><td>IC-3's Innovation Management pillar (from 100k€/yr) is already positioned for this; strengthen the recurring-revenue narrative</td><td>Source Global Research 2023; Lünendonk 2023</td></tr>
+              <tr><td>From methodology purchase to outcome guarantee</td><td>Buyers want measurable results, not workshop hours; "what's the ROI?" is the dominant procurement question</td><td>IC-3 has quantified outcomes (30% CapEx cut, €30M pipeline) – but needs to systematise ROI measurement and reporting</td><td>Anonymised competitor intelligence (2023); Gartner CIO survey 2023</td></tr>
+              <tr><td>From generic innovation to hyper-specialisation</td><td>Small consultancies that survive are those with deep vertical or methodological specialisation; generalists lose to in-house teams or larger firms</td><td>IC-3's ADT methodology and physical product focus is a genuine niche – but "innovation consulting" positioning is too broad; sharpening required</td><td>Anonymised competitor intelligence (2023)</td></tr>
+              <tr><td>From physical-only to physical-digital convergence</td><td>Even traditionally physical product companies now require digital integration (IoT packaging, smart products, digital twins)</td><td>IC-3's planned expansion into digital/services innovation is directionally correct; execution requires capability partnerships or selective hiring</td><td>McKinsey "Tech Trends" 2023; Interpack trend reports</td></tr>
+              <tr><td>From sustainability as add-on to sustainability as default</td><td>Sustainability is no longer a separate innovation workstream; it is embedded in every product development brief</td><td>IC-3 already has strong sustainability references; needs to position sustainability as a cross-cutting capability, not a separate offering</td><td>CDP 2023; PPWR impact assessments</td></tr>
+              <tr><td>Geographic shift: US FMCG growing faster than EU</td><td>US CPG companies increased R&amp;D spend by 6.2% in 2023 vs. 2.8% in EU; driven by competitive pressure and consumer premiumisation</td><td>IC-3 has US client references (ABInBev) but no US presence; partnership or remote delivery model required</td><td>Statista; IRI/Circana CPG industry reports</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Validate each shift with at least two independent sources.</strong> The shifts above are hypotheses derived from the competitor analysis and public market data. <em>Parallelisable.</em></li>
+          <li><span class="badge human">👤</span> <strong>Map IC-3's current positioning against each shift.</strong> Where is IC-3 already aligned? Where is it misaligned? Where is there an opportunity to lead?</li>
+          <li><span class="badge human">👤</span> <strong>Identify timing windows.</strong> Some shifts are gradual (physical-digital convergence); others have hard deadlines (PPWR compliance phases).</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Market shift map with IC-3 alignment assessment · Timing matrix · Strategic implications for each of the three pillars
+        </div>
+      </section>
+
+      <!-- MODULE 5 -->
+      <section id="module-5" class="section">
+        <div class="module-header">
+          <div class="module-number">05</div>
+          <div>
+            <h2>Customer Expectations</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 4 working days (interviews will stretch across 2 weeks due to scheduling)</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Understand what innovation decision-makers in FMCG/CPG/packaging actually want from an external innovation partner – and where current offerings (including IC-3's) fall short.</p>
+
+        <h3>Key Questions</h3>
+        <ul>
+          <li>What are the top 3 unmet needs when companies hire innovation consultants?</li>
+          <li>What kills deals – price, methodology, references, or something else?</li>
+          <li>How do procurement processes differ by company size and region?</li>
+        </ul>
+
+        <h3>Data Sources</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Source</th><th>What it provides</th><th>Access</th></tr></thead>
+            <tbody>
+              <tr><td>IC-3's own client relationships</td><td>Direct feedback from long-term partners (ABInBev, METRO, Philip Morris, V&amp;B) on what they value and what they wish were different</td><td>Informal conversations – "friends and family" interviews; 4–6 conversations at 30 min each</td></tr>
+              <tr><td>LinkedIn polls and posts from innovation leaders</td><td>Sentiment on innovation consulting value, pain points, budget decisions</td><td>Free monitoring; can also post targeted polls from IC-3's company page</td></tr>
+              <tr><td>Gartner / Forrester buyer surveys</td><td>What enterprise buyers prioritise when selecting consultants</td><td>Summary findings usually free via press releases; full reports behind paywall</td></tr>
+              <tr><td>Interpack / FACHPACK post-event surveys</td><td>Packaging industry innovation priorities and technology interests</td><td>Event organisers' publications; Messe Düsseldorf press office</td></tr>
+              <tr><td>Lünendonk "Client Perspective" supplements</td><td>Why enterprises choose specific consultancies; satisfaction drivers</td><td>Included in Lünendonk annual study supplements</td></tr>
+              <tr><td>Glassdoor / Kununu reviews of competitor firms</td><td>Client-side feedback embedded in employee reviews</td><td>Free</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge human">👤</span> <strong>Conduct 4–6 informal interviews</strong> with existing client contacts. Use a structured conversational guide covering: (a) what triggered their last search for an innovation partner, (b) what criteria they used to select, (c) what they would change, (d) what they see as the biggest upcoming innovation challenge. <em>This is the single highest-value activity in the entire plan.</em></li>
+          <li><span class="badge human">👤</span> <strong>Analyse win/loss patterns.</strong> Reconstruct the last 10 pitches. Top reasons for losing: (i) lack of access to decision-makers, (ii) high price point, (iii) lack of embodied domain expertise, (iv) client priority changes, (v) unconvincing expertise demonstration.</li>
+          <li><span class="badge hybrid">🤖/👤</span> <strong>Map the procurement journey.</strong> For mid-sized enterprises (500–5,000 employees): who initiates the search, who approves the budget, what procurement frameworks apply? Validate whether the free Health Check and Trial Workshop successfully bypass formal procurement for initial engagement.</li>
+          <li><span class="badge human">👤</span> <strong>Build buyer personas.</strong> Create 3–4 buyer personas: e.g. "VP Innovation at a €2bn+ FMCG company under PPWR pressure"; "Head of Packaging at a mid-sized CPG firm wanting to modernise"; "L&amp;D Director at a large enterprise wanting to build internal innovation capability".</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Interview summary (anonymised) · Win/loss analysis · Buyer persona profiles · Gap analysis: what customers expect vs. what IC-3 currently delivers
+        </div>
+      </section>
+
+      <!-- MODULE 6 -->
+      <section id="module-6" class="section">
+        <div class="module-header">
+          <div class="module-number">06</div>
+          <div>
+            <h2>Market Fit (IC-3 Offering)</h2>
+            <p class="module-meta"><strong>Timeline:</strong> 3 working days; dependent on completion of Modules 1–5</p>
+          </div>
+        </div>
+        <p><strong>Objective:</strong> Assess how well IC-3's current three-pillar offering fits the identified market opportunities – and where adjustments are needed.</p>
+
+        <h3>Current Offering Structure</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pillar</th><th>Target buyer</th><th>Entry point</th><th>Full engagement</th><th>Core value proposition</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Innovation Trainings</strong></td><td>Learning departments</td><td>Methodology introduction (2h, free)</td><td>From 20k€</td><td>Build internal innovation capability via ADT methodology</td></tr>
+              <tr><td><strong>Innovation Projects</strong></td><td>Project teams</td><td>Trial Workshop (½ day, 5k€)</td><td>From 50k€</td><td>Systematic ideation, concept development, de-risking for specific challenges</td></tr>
+              <tr><td><strong>Innovation Management</strong></td><td>Innovation departments</td><td>Health Check (2h, free)</td><td>From 100k€/yr</td><td>End-to-end innovation management from strategy to execution</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Fit Assessment Framework</h3>
+        <p>For each opportunity identified in Modules 1–5, score along four dimensions (1–5):</p>
+        <div class="fit-grid">
+          <div class="fit-card"><div class="fit-number">1</div><strong>Methodology fit</strong><p>Does IC-3's ADT methodology directly address the customer's problem? (5 = core ADT application; 1 = tangential)</p></div>
+          <div class="fit-card"><div class="fit-number">2</div><strong>Reference fit</strong><p>Does IC-3 have credible, named references in the buyer's industry? (5 = multiple named references with quantified outcomes; 1 = no relevant references)</p></div>
+          <div class="fit-card"><div class="fit-number">3</div><strong>Delivery fit</strong><p>Can IC-3 deliver with 2.5 FTEs, potentially with freelance support? (5 = standard workshop/project format; 1 = requires sustained multi-person team)</p></div>
+          <div class="fit-card"><div class="fit-number">4</div><strong>Commercial fit</strong><p>Is the opportunity financially attractive at IC-3's price points? (5 = buyer's budget aligns with 50k–100k+ range; 1 = extreme price pressure)</p></div>
+        </div>
+
+        <h3>Steps</h3>
+        <ol class="steps">
+          <li><span class="badge human">👤</span> <strong>Score existing opportunities.</strong> Apply the framework to the top 10 opportunities from Module 2's signal analysis. Identify the 3–5 with the highest aggregate score.</li>
+          <li><span class="badge human">👤</span> <strong>Identify offering gaps.</strong> Where opportunities score high on methodology and reference fit but low on delivery or commercial fit, identify specific adjustments: partnerships, lighter formats, productised offerings.</li>
+          <li><span class="badge human">👤</span> <strong>Assess the digital/services expansion.</strong> IC-3's plan to widen beyond physical product innovation: which opportunities specifically require this expansion? What minimal capability addition would be needed? What is the risk of diluting IC-3's current niche positioning?</li>
+          <li><span class="badge human">👤</span> <strong>Build a prioritised opportunity pipeline.</strong> Combine all six modules into a single ranked list of opportunities with estimated deal size, probability, timeline, and required actions.</li>
+        </ol>
+
+        <div class="output-box">
+          <strong>Output:</strong> Scored opportunity matrix · Offering gap analysis · Recommended adjustments to the three-pillar model · Prioritised pipeline (top 10)
+        </div>
+      </section>
+
+      <!-- EXECUTION SEQUENCE -->
+      <section id="execution" class="section">
+        <h2>Execution Sequence and Dependencies</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Week</th><th>Module</th><th>Activities</th><th>Dependencies</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>1 – Landscape</td><td>Competitor longlist, classification, Bundesanzeiger pulls</td><td>None</td></tr>
+              <tr><td>1</td><td>2 – Signals</td><td>Alert setup, regulatory timeline, first annual report scan</td><td>None – parallelisable with Module 1</td></tr>
+              <tr><td>2</td><td>1 – Landscape</td><td>White-space mapping, market sizing</td><td>Module 1 steps 1–3</td></tr>
+              <tr><td>2</td><td>3 – Pull/Push</td><td>Driver validation, weighting</td><td>Modules 1–2 first pass</td></tr>
+              <tr><td>2–3</td><td>5 – Customers</td><td>Interview scheduling and execution, win/loss reconstruction</td><td>None – interviews should start Week 1</td></tr>
+              <tr><td>3</td><td>4 – Market Shifts</td><td>Shift validation, IC-3 alignment, timing</td><td>Modules 1–3</td></tr>
+              <tr><td>3–4</td><td>6 – Market Fit</td><td>Scoring, gap analysis, pipeline build</td><td>All previous modules</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="timeline-note"><strong>Total estimated effort:</strong> 15–20 working days elapsed over 4 calendar weeks.</p>
+      </section>
+
+      <!-- AUTOMATION ROADMAP -->
+      <section id="automation" class="section">
+        <h2>Automation Roadmap</h2>
+        <p>For the envisioned permanent agentic market-intelligence process, the following components can be automated first (highest ROI):</p>
+        <ol class="steps">
+          <li><strong>Signal monitoring</strong> (Module 2): Google Alerts, LinkedIn job-change tracking, SEC/Bundesanzeiger filing alerts, regulatory tracker. Achievable with existing tools + a lightweight orchestration layer.</li>
+          <li><strong>Competitor tracking</strong> (Module 1): Periodic scraping of competitor websites for service catalogue changes, blog topics, case study additions, hiring patterns. LinkedIn headcount tracking.</li>
+          <li><strong>Annual report scanning</strong> (Modules 2/3): Automated download and keyword extraction from publicly filed annual and sustainability reports.</li>
+          <li><strong>News monitoring</strong> (Module 2): Targeted news monitoring for M&amp;A, leadership changes, plant investments at target accounts.</li>
+        </ol>
+        <div class="callout">
+          <p>The components requiring ongoing human judgement are: buyer interviews (Module 5), win/loss analysis (Module 5), opportunity scoring (Module 6), and strategic interpretation of all outputs.</p>
+        </div>
+      </section>
+
+      <!-- REFERENCES -->
+      <section id="references" class="section">
+        <h2>Reference List</h2>
+        <ul class="ref-list">
+          <li>Anonymised competitor intelligence report (2023). <em>Internal reference document, competitor landscape analysis for a German digital innovation consultancy, September 2023.</em> [Not publicly available; used with anonymisation.]</li>
+          <li>BDU (2024). <em>Facts &amp; Figures zum Beratermarkt.</em> Bundesverband Deutscher Unternehmensberater.</li>
+          <li>CDP (2023). <em>Global Supply Chain Report 2023.</em> Carbon Disclosure Project.</li>
+          <li>European Commission (2022). <em>Proposal for a Regulation on Packaging and Packaging Waste (PPWR).</em> COM/2022/677.</li>
+          <li>Gartner (2023). <em>Gartner CIO and Technology Executive Survey 2023.</em></li>
+          <li>Gartner (2022). <em>Market Share: IT Services, Worldwide, 2022.</em> [Paywall; summary data via Gartner newsroom.]</li>
+          <li>Hays (2024). <em>Hays Salary Guide 2024 – Germany.</em></li>
+          <li>IC-3 GmbH (2026). <em>Innovation Instigators – Company Presentation.</em> [Internal document.]</li>
+          <li>Lünendonk (2023). <em>Lünendonk-Studie 2023: Der Markt für IT-Beratung und IT-Service in Deutschland.</em> Lünendonk &amp; Hossenfelder GmbH.</li>
+          <li>McKinsey (2023). <em>McKinsey Technology Trends Outlook 2023.</em></li>
+          <li>McKinsey (2024). <em>The State of AI in 2024.</em></li>
+          <li>Nielsen IQ (2023). <em>Breakthrough Innovation Report.</em></li>
+          <li>PwC (2024). <em>Global M&amp;A Trends in Consumer Markets 2024.</em></li>
+          <li>SBTi (2024). <em>Science Based Targets Progress Report.</em></li>
+          <li>Source Global Research (2023). <em>The Global Consulting Market in 2023.</em></li>
+        </ul>
+      </section>
+
+      <!-- CAVEATS -->
+      <section id="caveats" class="section">
+        <h2>Key Assumptions and Caveats</h2>
+        <ol class="steps">
+          <li><strong>Market sizing is approximate.</strong> Innovation consulting is not a cleanly defined segment in standard industry classifications. The figures cited are triangulations from multiple sources and carry ±30% uncertainty.</li>
+          <li><strong>Competitor financial data lags.</strong> Bundesanzeiger filings for GmbH entities are typically 6–18 months behind. The latest available data for most competitors will be FY2024 at best.</li>
+          <li><strong>The anonymised competitor analysis is from September 2023.</strong> Market conditions have evolved, particularly around AI adoption and regulatory timelines. All data points from that document should be treated as directional, not current.</li>
+          <li><strong>Critical assumption:</strong> If IC-3's long-term clients are not representative of the broader market's needs (i.e. if IC-3's relationship-based model has created a filter bias), then the customer expectations module may produce misleading signals. <em>Mitigation: include at least 1–2 interviews with prospects who did <strong>not</strong> become clients.</em></li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
