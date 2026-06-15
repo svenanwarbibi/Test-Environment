@@ -214,6 +214,27 @@
         <div class="output-box">
           <strong>Output:</strong> Signal tracker (spreadsheet, updated weekly) · Regulatory timeline (Gantt chart) · Prioritised opportunity shortlist with estimated engagement size
         </div>
+
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Live Signal Monitor</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Fetches live industry news and categorises by signal type (M&amp;A, Regulatory, Leadership, Capex, Events).</p>
+          <button id="run-signals-btn" class="run-btn"><span class="run-icon">▶</span> Fetch Signals</button>
+          <div id="signals-status" class="scan-status hidden"></div>
+          <div id="signals-results" class="hidden">
+            <div id="signals-cat-filter" class="region-tabs" style="flex-wrap:wrap;"></div>
+            <div class="results-toolbar"><span id="signals-count"></span></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Type</th><th>Headline</th><th>Source</th><th>Date</th></tr></thead>
+                <tbody id="signals-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- MODULE 3 -->
@@ -266,6 +287,22 @@
         <div class="output-box">
           <strong>Output:</strong> Pull/push driver matrix with weightings · Net-effect assessment by vertical · Risk register for push factors
         </div>
+
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Live Driver Dashboard</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Loads validated pull/push factors with confidence scores and net-effect assessment per vertical.</p>
+          <button id="run-drivers-btn" class="run-btn"><span class="run-icon">▶</span> Load Driver Analysis</button>
+          <div id="drivers-status" class="scan-status hidden"></div>
+          <div id="drivers-results" class="hidden">
+            <div class="drivers-grid" id="drivers-grid"></div>
+            <h4 style="margin:1.5rem 0 .75rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);">Net Effect by Vertical</h4>
+            <div id="verticals-chart"></div>
+          </div>
+        </div>
       </section>
 
       <!-- MODULE 4 -->
@@ -302,6 +339,18 @@
 
         <div class="output-box">
           <strong>Output:</strong> Market shift map with IC-3 alignment assessment · Timing matrix · Strategic implications for each of the three pillars
+        </div>
+
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Live Shift Tracker</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Maps each structural shift against IC-3's current positioning and scans for live news evidence.</p>
+          <button id="run-shifts-btn" class="run-btn"><span class="run-icon">▶</span> Scan Shifts</button>
+          <div id="shifts-status" class="scan-status hidden"></div>
+          <div id="shifts-grid" class="hidden shifts-grid"></div>
         </div>
       </section>
 
@@ -349,6 +398,27 @@
         <div class="output-box">
           <strong>Output:</strong> Interview summary (anonymised) · Win/loss analysis · Buyer persona profiles · Gap analysis: what customers expect vs. what IC-3 currently delivers
         </div>
+
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Live Buyer Intent Monitor</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Scans live job postings from Indeed (DE) for innovation roles — each posting is a signal of internal capability gaps and buyer expectations.</p>
+          <button id="run-buyer-btn" class="run-btn"><span class="run-icon">▶</span> Scan Job Signals</button>
+          <div id="buyer-status" class="scan-status hidden"></div>
+          <div id="buyer-results" class="hidden">
+            <div id="persona-cards" class="fit-grid" style="margin-bottom:1.5rem;"></div>
+            <div class="results-toolbar"><span id="buyer-count"></span></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Job Title</th><th>Buyer Signal</th><th>IC-3 Persona</th><th>Priority</th><th>Source</th></tr></thead>
+                <tbody id="buyer-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- MODULE 6 -->
@@ -393,6 +463,28 @@
 
         <div class="output-box">
           <strong>Output:</strong> Scored opportunity matrix · Offering gap analysis · Recommended adjustments to the three-pillar model · Prioritised pipeline (top 10)
+        </div>
+
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Opportunity Scoring Engine</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Scores 10 pre-seeded opportunities across 4 fit dimensions. Adjust any score and the pipeline re-ranks live.</p>
+          <button id="run-pipeline-btn" class="run-btn"><span class="run-icon">▶</span> Load Pipeline</button>
+          <div id="pipeline-status" class="scan-status hidden"></div>
+          <div id="pipeline-results" class="hidden">
+            <div id="pipeline-summary" class="sizing-cards" style="grid-template-columns:repeat(4,1fr);margin-bottom:1.5rem;"></div>
+            <h4 style="margin:.5rem 0 .75rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);">Ranked Opportunity Pipeline</h4>
+            <div class="table-wrap">
+              <table id="pipeline-table">
+                <thead><tr><th>#</th><th>Opportunity</th><th>Pillar</th><th>Meth.</th><th>Ref.</th><th>Delivery</th><th>Commercial</th><th>Score /20</th><th>Priority</th><th>Est. Value</th></tr></thead>
+                <tbody id="pipeline-tbody"></tbody>
+              </table>
+            </div>
+            <div id="gaps-box" class="hidden" style="margin-top:1rem;"></div>
+          </div>
         </div>
       </section>
 
