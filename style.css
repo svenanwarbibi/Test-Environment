@@ -324,6 +324,181 @@ tbody tr:nth-child(even) td { background: #fafbfc; }
 }
 .ref-list li:last-child { border-bottom: none; }
 
+/* LIVE SCAN PANEL */
+.live-panel {
+  margin-top: 2rem;
+  border: 2px solid var(--blue-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: white;
+}
+.live-panel-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .25rem;
+}
+.live-dot {
+  width: 10px; height: 10px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+.live-badge {
+  background: var(--blue);
+  color: white;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+}
+.region-tabs {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.region-btn {
+  padding: .4rem 1rem;
+  border: 2px solid var(--border);
+  background: white;
+  border-radius: 6px;
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+  color: var(--muted);
+}
+.region-btn.active, .region-btn:hover {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+  background: var(--accent);
+}
+.run-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: .6rem 1.4rem;
+  font-size: .9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s;
+  margin-bottom: 1.25rem;
+}
+.run-btn:hover { background: var(--blue-light); }
+.run-btn:disabled { background: var(--muted); cursor: not-allowed; }
+.run-icon { font-size: .8rem; }
+.scan-status {
+  padding: .75rem 1rem;
+  border-radius: 8px;
+  font-size: .88rem;
+  margin-bottom: 1rem;
+  background: var(--accent);
+  color: var(--blue);
+}
+.scan-status.error { background: #fee2e2; color: #991b1b; }
+.hidden { display: none !important; }
+
+/* SIZING CARDS */
+.sizing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+  margin-bottom: 1.5rem;
+}
+.sizing-card {
+  background: var(--accent);
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.sizing-card .s-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.2;
+}
+.sizing-card .s-label {
+  font-size: .72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .3rem;
+}
+.sizing-card .s-source {
+  font-size: .7rem;
+  color: var(--muted);
+  margin-top: .25rem;
+  font-style: italic;
+}
+
+/* ARCHETYPE CHART */
+.archetype-chart-wrap {
+  margin-bottom: 1.5rem;
+}
+.archetype-chart-wrap h4 {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--blue);
+  margin-bottom: .75rem;
+}
+.arch-bar-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: .5rem;
+  font-size: .82rem;
+}
+.arch-bar-label { width: 220px; flex-shrink: 0; color: var(--text); }
+.arch-bar-track { flex: 1; background: var(--border); border-radius: 4px; height: 14px; overflow: hidden; }
+.arch-bar-fill { height: 100%; border-radius: 4px; transition: width .5s ease; }
+.arch-bar-count { width: 24px; text-align: right; color: var(--muted); font-weight: 600; }
+
+/* RESULTS TOOLBAR */
+.results-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .75rem;
+}
+#company-search {
+  flex: 1;
+  padding: .45rem .75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: .88rem;
+}
+#results-count { color: var(--muted); font-size: .82rem; white-space: nowrap; }
+
+/* SOURCE CHIPS */
+.source-chip {
+  display: inline-block;
+  padding: .15rem .5rem;
+  border-radius: 20px;
+  font-size: .72rem;
+  font-weight: 600;
+}
+.source-chip.curated { background: #dbeafe; color: #1d4ed8; }
+.source-chip.opencorporates { background: #d1fae5; color: #065f46; }
+
+.live-note {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: .75rem;
+  font-style: italic;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .sidebar { display: none; }

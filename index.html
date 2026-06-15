@@ -117,6 +117,55 @@
         <div class="output-box">
           <strong>Output:</strong> Competitor landscape map · White-space matrix · Market sizing estimate with confidence bands
         </div>
+
+        <!-- LIVE SCAN PANEL -->
+        <div class="live-panel">
+          <div class="live-panel-header">
+            <span class="live-dot"></span>
+            <h3 style="margin:0;text-transform:none;font-size:1rem;letter-spacing:0;">Live Competitor Scan</h3>
+            <span class="live-badge">AUTOMATED</span>
+          </div>
+          <p style="font-size:.85rem;color:var(--muted);margin:.5rem 0 1rem;">Fetches registered companies from OpenCorporates + curated base list. Select region and run.</p>
+
+          <div class="region-tabs">
+            <button class="region-btn active" data-region="dach">DACH</button>
+            <button class="region-btn" data-region="emea">EMEA</button>
+            <button class="region-btn" data-region="us">US</button>
+          </div>
+
+          <button id="run-scan-btn" class="run-btn">
+            <span class="run-icon">▶</span> Run Scan
+          </button>
+
+          <div id="scan-status" class="scan-status hidden"></div>
+
+          <div id="scan-results" class="hidden">
+            <div class="sizing-cards" id="sizing-cards"></div>
+            <div class="archetype-chart-wrap">
+              <h4>Competitor Archetypes</h4>
+              <div id="archetype-bars"></div>
+            </div>
+            <div class="results-toolbar">
+              <input type="text" id="company-search" placeholder="Filter companies…" />
+              <span id="results-count"></span>
+            </div>
+            <div class="table-wrap">
+              <table id="results-table">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Archetype</th>
+                    <th>IC-3 Services Overlap</th>
+                    <th>Source</th>
+                  </tr>
+                </thead>
+                <tbody id="results-tbody"></tbody>
+              </table>
+            </div>
+            <p id="live-note" class="live-note hidden"></p>
+          </div>
+        </div>
       </section>
 
       <!-- MODULE 2 -->
