@@ -1,3 +1,5 @@
+const callClaude = require('./_claude');
+
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cache-Control', 's-maxage=3600');
@@ -26,5 +28,17 @@ module.exports = async function handler(req, res) {
     { name: 'Adjacent (Auto, Chem, Sanitary)', pullScore: 16, pushScore: 14, verdict: 'Balanced — selective targeting advised' },
   ];
 
-  res.json({ pull, push, verticals, timestamp: new Date().toISOString() });
+  // Claude: net strategic assessment
+  let claudeInsight = null;
+  try {
+    const pullNames = pull.map((f) => f.name).join(', ');
+    const pushNames = push.map((f) => f.name).join(', ');
+    const raw = await callClaude(
+      'You are a market intelligence analyst for IC-3, a boutique innovation consultancy for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `Pull factors: ${pullNames}. Push factors: ${pushNames}. IC-3 specialises in physical product innovation (ADT methodology), packaging/FMCG, 2.5 FTEs. Respond as JSON: {"netAssessment":"...","topOpportunity":"...","topRisk":"...","positioning":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
+  res.json({ pull, push, verticals, claudeInsight, timestamp: new Date().toISOString() });
 };

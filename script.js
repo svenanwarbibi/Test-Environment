@@ -13,6 +13,23 @@ const observer = new IntersectionObserver(
 );
 sections.forEach((s) => observer.observe(s));
 
+// ── Claude insight renderer ───────────────────────────────────────────────────
+function renderClaudeInsight(containerId, insight, fields) {
+  const container = el(containerId);
+  if (!container || !insight) return;
+  const items = fields.map(([key, label, full]) => `
+    <div class="claude-insight-item${full ? ' full' : ''}">
+      <div class="ci-label">${label}</div>
+      <div class="ci-value">${insight[key] || '—'}</div>
+    </div>`).join('');
+  container.innerHTML = `
+    <div class="claude-insight">
+      <div class="claude-insight-header"><span class="ai-badge">AI</span> Claude Analysis — IC-3 Strategic Read</div>
+      <div class="claude-insight-grid">${items}</div>
+    </div>`;
+  container.classList.remove('hidden');
+}
+
 // ── Shared helpers ────────────────────────────────────────────────────────────
 function setStatus(el, msg, isError = false) {
   el.className = `scan-status${isError ? ' error' : ''}`;
@@ -55,6 +72,11 @@ btn('run-scan-btn')?.addEventListener('click', async () => {
     renderCompetitorTable(data.companies, data.archetypes);
     setStatus(status, `✓ ${data.meta.total} companies — ${data.meta.liveAdded} live from OpenCorporates, ${data.meta.curated} curated.`);
     results.classList.remove('hidden');
+    renderClaudeInsight('scan-claude', data.claudeInsight, [
+      ['whiteSpace', 'White Space Opportunities (top 3)', true],
+      ['topThreat', 'Top Competitive Threat'],
+      ['recommendation', 'Strategic Recommendation'],
+    ]);
     const note = el('live-note');
     if (data.meta.liveError) { note.textContent = `Note: ${data.meta.liveError}`; note.classList.remove('hidden'); }
     else note.classList.add('hidden');
@@ -139,6 +161,12 @@ btn('run-signals-btn')?.addEventListener('click', async () => {
     renderSignals(data.signals);
     setStatus(status, `✓ ${data.signals.length} signals fetched. ${data.errors.length ? `${data.errors.length} source(s) unavailable.` : 'All sources OK.'}`);
     el('signals-results').classList.remove('hidden');
+    renderClaudeInsight('signals-claude', data.claudeInsight, [
+      ['topSignal', 'Most Important Signal', true],
+      ['ic3Action', 'Recommended IC-3 Action'],
+      ['urgency', 'Urgency'],
+      ['rationale', 'Rationale'],
+    ]);
   } catch (e) {
     setStatus(status, `Error: ${e.message}`, true);
   } finally {
@@ -199,6 +227,12 @@ btn('run-drivers-btn')?.addEventListener('click', async () => {
 
     setStatus(status, `✓ ${data.pull.length} pull factors · ${data.push.length} push factors · ${data.verticals.length} verticals assessed.`);
     el('drivers-results').classList.remove('hidden');
+    renderClaudeInsight('drivers-claude', data.claudeInsight, [
+      ['netAssessment', 'Net Market Assessment', true],
+      ['topOpportunity', 'Top Opportunity'],
+      ['topRisk', 'Top Risk'],
+      ['positioning', 'Recommended Positioning'],
+    ]);
   } catch (e) {
     setStatus(status, `Error: ${e.message}`, true);
   } finally {
@@ -231,6 +265,12 @@ btn('run-shifts-btn')?.addEventListener('click', async () => {
     }).join('');
     setStatus(status, `✓ ${data.shifts.length} shifts mapped · ${data.shifts.filter((s) => s.liveEvidence?.length).length} with live evidence.`);
     grid.classList.remove('hidden');
+    renderClaudeInsight('shifts-claude', data.claudeInsight, [
+      ['mostUrgentShift', 'Most Urgent Shift to Act On', true],
+      ['recommendedAction', 'Recommended Action'],
+      ['biggestRisk', 'Biggest Risk if Ignored'],
+      ['quickWin', 'Quick Win Available'],
+    ]);
   } catch (e) {
     setStatus(status, `Error: ${e.message}`, true);
   } finally {
@@ -268,6 +308,13 @@ btn('run-buyer-btn')?.addEventListener('click', async () => {
     const errNote = data.errors.length ? ` (${data.errors.length} feed(s) unavailable)` : '';
     setStatus(status, `✓ ${data.jobs.length} job signals scanned${errNote}.`);
     el('buyer-results').classList.remove('hidden');
+    renderClaudeInsight('buyer-claude', data.claudeInsight, [
+      ['topNeed', 'What Buyers Need Most', true],
+      ['buyerPatterns', 'Patterns Observed', true],
+      ['ic3Fit', 'IC-3 Fit Assessment'],
+      ['gap', 'Key Gap to Address'],
+      ['recommendation', 'Recommendation'],
+    ]);
   } catch (e) {
     setStatus(status, `Error: ${e.message}`, true);
   } finally {
@@ -313,6 +360,12 @@ btn('run-pipeline-btn')?.addEventListener('click', async () => {
 
     setStatus(status, `✓ ${data.opportunities.length} opportunities scored · ${data.summary.priorityA} Priority A ready to pursue.`);
     el('pipeline-results').classList.remove('hidden');
+    renderClaudeInsight('pipeline-claude', data.claudeInsight, [
+      ['nextAction', 'Immediate Next Action', true],
+      ['bestOpportunity', 'Best Opportunity to Pursue'],
+      ['quickWin', 'Quick Win'],
+      ['watchout', 'Watch Out For'],
+    ]);
   } catch (e) {
     setStatus(status, `Error: ${e.message}`, true);
   } finally {

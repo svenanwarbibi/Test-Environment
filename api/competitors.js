@@ -1,4 +1,5 @@
 const https = require('https');
+const callClaude = require('./_claude');
 
 // Curated base list — real firms, manually validated
 const SEED = [
@@ -114,12 +115,24 @@ module.exports = async function handler(req, res) {
     archetypeCounts[key] = (archetypeCounts[key] || 0) + 1;
   });
 
+  // Claude: white space + strategic read
+  let claudeInsight = null;
+  try {
+    const names = companies.slice(0, 20).map((c) => `${c.name} (${c.archetype || 'unknown'})`).join(', ');
+    const raw = await callClaude(
+      'You are a market intelligence analyst for IC-3, a boutique innovation consultancy specialising in physical product innovation for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `Competitors in the ${region.toUpperCase()} region: ${names}. IC-3's strengths: ADT methodology, physical product innovation, packaging/FMCG depth, proven KPI impact (30% CapEx cut). Respond as JSON: {"whiteSpace":["...","...","..."],"topThreat":"...","recommendation":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
   res.json({
     region,
     companies,
     archetypeCounts,
     archetypes: ARCHETYPES,
     marketSizing: MARKET_SIZING,
+    claudeInsight,
     meta: {
       total: companies.length,
       curated: base.length,

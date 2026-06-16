@@ -1,4 +1,5 @@
 const https = require('https');
+const callClaude = require('./_claude');
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
@@ -102,5 +103,16 @@ module.exports = async function handler(req, res) {
     };
   });
 
-  res.json({ shifts, alignmentMeta: ALIGNMENT_META, timestamp: new Date().toISOString() });
+  // Claude: prioritised action recommendations per shift
+  let claudeInsight = null;
+  try {
+    const shiftSummary = shifts.map((s) => `${s.label} (IC-3 alignment: ${s.alignment})`).join('\n');
+    const raw = await callClaude(
+      'You are a market intelligence analyst for IC-3, a boutique innovation consultancy for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `IC-3 faces these market shifts:\n${shiftSummary}\n\nRespond as JSON: {"mostUrgentShift":"...","recommendedAction":"...","biggestRisk":"...","quickWin":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
+  res.json({ shifts, alignmentMeta: ALIGNMENT_META, claudeInsight, timestamp: new Date().toISOString() });
 };

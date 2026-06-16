@@ -1,4 +1,5 @@
 // Module 6: Market Fit — Opportunity Scoring Engine
+const callClaude = require('./_claude');
 // Scores opportunities on 4 dimensions (1–5) and returns ranked pipeline.
 
 const BASE_OPPORTUNITIES = [
@@ -37,9 +38,21 @@ module.exports = async function handler(req, res) {
     .filter((o) => o.methodFit + o.refFit >= 8 && o.deliveryFit + o.commercialFit < 7)
     .map((o) => ({ name: o.name, issue: o.deliveryFit < 3 ? 'Delivery capacity' : 'Commercial fit / price point' }));
 
+  // Claude: strategic next-action recommendation
+  let claudeInsight = null;
+  try {
+    const top5 = opportunities.slice(0, 5).map((o) => `${o.name} (score ${o.totalScore}/20, ${o.pillar}, ${o.estimatedValue})`).join('\n');
+    const raw = await callClaude(
+      'You are a strategic advisor for IC-3, a 2.5-FTE boutique innovation consultancy for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `Top-ranked opportunities:\n${top5}\n\nRespond as JSON: {"nextAction":"...","bestOpportunity":"...","quickWin":"...","watchout":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
   res.json({
     opportunities,
     gaps,
+    claudeInsight,
     summary: {
       priorityA: opportunities.filter((o) => o.priority === 'A').length,
       priorityB: opportunities.filter((o) => o.priority === 'B').length,

@@ -1,4 +1,5 @@
 const https = require('https');
+const callClaude = require('./_claude');
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
@@ -100,5 +101,16 @@ module.exports = async function handler(req, res) {
   const personaCounts = {};
   jobs.forEach((j) => { personaCounts[j.persona] = (personaCounts[j.persona] || 0) + 1; });
 
-  res.json({ jobs: jobs.slice(0, 40), personaCounts, personas: PERSONAS, errors, timestamp: new Date().toISOString() });
+  // Claude: synthesise buyer patterns and IC-3 fit
+  let claudeInsight = null;
+  try {
+    const titles = jobs.slice(0, 15).map((j) => j.title).join(', ');
+    const raw = await callClaude(
+      'You are a market intelligence analyst for IC-3, a boutique innovation consultancy for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `These innovation-related roles are being hired in Germany: ${titles}. What do they signal about what buyers need from external innovation partners? Respond as JSON: {"topNeed":"...","buyerPatterns":["...","...","..."],"ic3Fit":"high|medium|low","gap":"...","recommendation":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
+  res.json({ jobs: jobs.slice(0, 40), personaCounts, personas: PERSONAS, claudeInsight, errors, timestamp: new Date().toISOString() });
 };

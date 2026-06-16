@@ -1,4 +1,5 @@
 const https = require('https');
+const callClaude = require('./_claude');
 
 function fetchURL(url) {
   return new Promise((resolve, reject) => {
@@ -94,10 +95,22 @@ module.exports = async function handler(req, res) {
   const counts = {};
   allItems.forEach((i) => { counts[i.cat] = (counts[i.cat] || 0) + 1; });
 
+  // Claude: interpret top signals for IC-3
+  let claudeInsight = null;
+  try {
+    const headlines = allItems.slice(0, 12).map((i) => `[${i.label}] ${i.title}`).join('\n');
+    const raw = await callClaude(
+      'You are a market intelligence analyst for IC-3, a boutique innovation consultancy for FMCG/CPG/packaging. Respond with valid JSON only — no markdown.',
+      `These are the latest market signals:\n${headlines}\n\nRespond as JSON: {"topSignal":"...","ic3Action":"...","urgency":"high|medium|low","rationale":"..."}`
+    );
+    claudeInsight = JSON.parse(raw);
+  } catch (_) { /* non-fatal */ }
+
   res.json({
     signals: allItems.slice(0, 50),
     counts,
     categories: SIGNAL_RULES,
+    claudeInsight,
     errors,
     timestamp: new Date().toISOString(),
   });
